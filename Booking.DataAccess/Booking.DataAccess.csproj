@@ -16,9 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstractions\" />
-    <Folder Include="Context\" />
-    <Folder Include="Repository\" />
+    <ProjectReference Include="..\Booking.Entities\Booking.Entities.csproj" />
   </ItemGroup>
 
 </Project>

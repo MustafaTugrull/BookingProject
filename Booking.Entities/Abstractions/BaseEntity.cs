@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Booking.Entities.Abstractions
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         public BaseEntity()
         {
