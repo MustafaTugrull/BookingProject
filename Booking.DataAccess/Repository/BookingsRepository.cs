@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Booking.DataAccess.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Booking.DataAccess.Repository
 {
-    public class BookingsRepository
+    public class BookingsRepository : GenericRepository<BookingsRepository>
     {
-
+        public BookingsRepository(ApplicationDbContext context) : base(context)
+        {
+        }
     }
 }
