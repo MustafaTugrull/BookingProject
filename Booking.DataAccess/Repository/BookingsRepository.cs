@@ -8,5 +8,6 @@ namespace Booking.DataAccess.Repository
 {
     public class BookingsRepository
     {
+
     }
 }
