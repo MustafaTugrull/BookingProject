@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Booking.DataAccess.Repository
 {
-    public class Guest : GenericRepository<Guest>
+    public class GuestRepository : GenericRepository<GuestRepository>
     {
-        public Guest(ApplicationDbContext context) : base(context)
+        public GuestRepository(ApplicationDbContext context) : base(context)
         {
 
         }
