@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace Booking.Business.Validator
 {
-    public class BookingsValidator : AbstractValidator<Bookings>
+    public class GuestValidator : AbstractValidator<Guest>
     {
-        public BookingsValidator()
+        public GuestValidator()
         {
-            RuleFor(b => b.Guest)
+            RuleFor(g => g.TCKN)
                 .NotEmpty()
-                .WithMessage("Misafir alanı boş olamaz.");
+                .WithMessage("Tc Kimlik No boş geçilemez.");
         }
-
     }
 }

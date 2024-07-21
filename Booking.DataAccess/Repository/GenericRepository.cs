@@ -1,6 +1,6 @@
-﻿using Booking.DataAccess.Abstractions;
+﻿using Microsoft.EntityFrameworkCore;
+using Booking.DataAccess.Abstractions;
 using Booking.DataAccess.Context;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +25,9 @@ namespace Booking.DataAccess.Repository
             _context.SaveChanges();
         }
 
-        public void Delete(T entity)
+        public void Delete(Guid id)
         {
-            _dbSet.Remove(entity);
+            _dbSet.Remove(GetByID(id));
             _context.SaveChanges();
         }
 
