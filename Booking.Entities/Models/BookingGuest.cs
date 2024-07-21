@@ -1,6 +1,8 @@
-﻿namespace Booking.Entities.Models
+﻿using Booking.Entities.Abstractions;
+
+namespace Booking.Entities.Models
 {
-    public class BookingGuest 
+    public class BookingGuest : BaseEntity
     {
         public Guid BookingID { get; set; }
         public Bookings Booking { get; set; }

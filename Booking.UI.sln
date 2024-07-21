@@ -3,25 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.UI", "Booking.UI\Booking.UI.csproj", "{967AE4E6-9597-48B9-9202-D143B35CD2F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.UI", "Booking.UI\Booking.UI.csproj", "{967AE4E6-9597-48B9-9202-D143B35CD2F8}"
 	ProjectSection(ProjectDependencies) = postProject
-		{3B008BDE-6322-4ECC-8465-2E029CB2B5A4} = {3B008BDE-6322-4ECC-8465-2E029CB2B5A4}
 		{8F718AC9-593A-4AE8-B427-6A6F4D6B3FC9} = {8F718AC9-593A-4AE8-B427-6A6F4D6B3FC9}
 		{AFBF299C-0ED0-490D-AFEC-7ACA6D9F6503} = {AFBF299C-0ED0-490D-AFEC-7ACA6D9F6503}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.Business", "Booking.Business\Booking.Business.csproj", "{AFBF299C-0ED0-490D-AFEC-7ACA6D9F6503}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.Business", "Booking.Business\Booking.Business.csproj", "{AFBF299C-0ED0-490D-AFEC-7ACA6D9F6503}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3B008BDE-6322-4ECC-8465-2E029CB2B5A4} = {3B008BDE-6322-4ECC-8465-2E029CB2B5A4}
 		{8F718AC9-593A-4AE8-B427-6A6F4D6B3FC9} = {8F718AC9-593A-4AE8-B427-6A6F4D6B3FC9}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.DataAccess", "Booking.DataAccess\Booking.DataAccess.csproj", "{3B008BDE-6322-4ECC-8465-2E029CB2B5A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.DataAccess", "Booking.DataAccess\Booking.DataAccess.csproj", "{3B008BDE-6322-4ECC-8465-2E029CB2B5A4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8F718AC9-593A-4AE8-B427-6A6F4D6B3FC9} = {8F718AC9-593A-4AE8-B427-6A6F4D6B3FC9}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.Entities", "Booking.Entities\Booking.Entities.csproj", "{8F718AC9-593A-4AE8-B427-6A6F4D6B3FC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.Entities", "Booking.Entities\Booking.Entities.csproj", "{8F718AC9-593A-4AE8-B427-6A6F4D6B3FC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

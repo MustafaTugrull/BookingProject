@@ -19,6 +19,11 @@ namespace Booking.DataAccess.Context
         public DbSet<Payment> Payments { get; set; }
         public DbSet<BookingGuest> BookingGuests { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-AO5K0VF;Initial Catalog=Hotels;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -44,7 +49,7 @@ namespace Booking.DataAccess.Context
             modelBuilder.Entity<Bookings>()
                 .HasOne(b => b.Room)
                 .WithMany(r => r.Bookings)
-                .HasForeignKey(b => b.RoomID);
+                .HasForeignKey(b => new { b.RoomNumber, b.HotelID });
 
             modelBuilder.Entity<Payment>()
                 .HasOne(p => p.Booking)
@@ -53,6 +58,18 @@ namespace Booking.DataAccess.Context
 
             modelBuilder.Entity<BookingGuest>()
                 .HasKey(bg => new { bg.BookingID, bg.GuestID });
+
+            modelBuilder.Entity<BookingGuest>()
+                .HasOne(bg => bg.Booking)
+                .WithMany(b => b.BookingGuests)
+                .HasForeignKey(bg => bg.BookingID)
+                .OnDelete(DeleteBehavior.NoAction);  
+
+            modelBuilder.Entity<BookingGuest>()
+                .HasOne(bg => bg.Guest)
+                .WithMany(g => g.BookingGuests)
+                .HasForeignKey(bg => bg.GuestID)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
