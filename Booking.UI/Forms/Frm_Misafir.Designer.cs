@@ -1,0 +1,281 @@
+﻿namespace Booking.UI.Forms
+{
+    partial class Frm_Misafir
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            grpOtel = new GroupBox();
+            dateTimePicker1 = new DateTimePicker();
+            textBox3 = new TextBox();
+            label6 = new Label();
+            textBox2 = new TextBox();
+            label5 = new Label();
+            label8 = new Label();
+            btnKaydet = new Button();
+            txtMail = new TextBox();
+            txtTel = new TextBox();
+            txtAdres = new TextBox();
+            txtAd = new TextBox();
+            label1 = new Label();
+            label4 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            btnGuncelle = new Button();
+            label7 = new Label();
+            btnSil = new Button();
+            lstMisafir = new ListBox();
+            grpOtel.SuspendLayout();
+            SuspendLayout();
+            // 
+            // grpOtel
+            // 
+            grpOtel.BackColor = SystemColors.Control;
+            grpOtel.Controls.Add(dateTimePicker1);
+            grpOtel.Controls.Add(textBox3);
+            grpOtel.Controls.Add(label6);
+            grpOtel.Controls.Add(textBox2);
+            grpOtel.Controls.Add(label5);
+            grpOtel.Controls.Add(label8);
+            grpOtel.Controls.Add(btnKaydet);
+            grpOtel.Controls.Add(txtMail);
+            grpOtel.Controls.Add(txtTel);
+            grpOtel.Controls.Add(txtAdres);
+            grpOtel.Controls.Add(txtAd);
+            grpOtel.Controls.Add(label1);
+            grpOtel.Controls.Add(label4);
+            grpOtel.Controls.Add(label2);
+            grpOtel.Controls.Add(label3);
+            grpOtel.Location = new Point(17, 13);
+            grpOtel.Name = "grpOtel";
+            grpOtel.Size = new Size(680, 484);
+            grpOtel.TabIndex = 33;
+            grpOtel.TabStop = false;
+            grpOtel.Text = "Misafir Bilgileri";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(188, 198);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(472, 43);
+            dateTimePicker1.TabIndex = 33;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(188, 149);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(472, 43);
+            textBox3.TabIndex = 32;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(49, 146);
+            label6.Name = "label6";
+            label6.Size = new Size(133, 37);
+            label6.TabIndex = 31;
+            label6.Text = "TC Kimlik:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(188, 247);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(472, 74);
+            textBox2.TabIndex = 30;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(92, 241);
+            label5.Name = "label5";
+            label5.Size = new Size(90, 37);
+            label5.TabIndex = 29;
+            label5.Text = "Adres:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(0, 195);
+            label8.Name = "label8";
+            label8.Size = new Size(182, 37);
+            label8.TabIndex = 27;
+            label8.Text = "Doğum Tarihi:";
+            // 
+            // btnKaydet
+            // 
+            btnKaydet.Location = new Point(490, 423);
+            btnKaydet.Name = "btnKaydet";
+            btnKaydet.Size = new Size(170, 50);
+            btnKaydet.TabIndex = 26;
+            btnKaydet.Text = "Kaydet";
+            btnKaydet.UseVisualStyleBackColor = true;
+            // 
+            // txtMail
+            // 
+            txtMail.Location = new Point(188, 376);
+            txtMail.Name = "txtMail";
+            txtMail.Size = new Size(472, 43);
+            txtMail.TabIndex = 7;
+            // 
+            // txtTel
+            // 
+            txtTel.Location = new Point(188, 327);
+            txtTel.Name = "txtTel";
+            txtTel.Size = new Size(472, 43);
+            txtTel.TabIndex = 6;
+            // 
+            // txtAdres
+            // 
+            txtAdres.Location = new Point(188, 100);
+            txtAdres.Name = "txtAdres";
+            txtAdres.Size = new Size(472, 43);
+            txtAdres.TabIndex = 5;
+            // 
+            // txtAd
+            // 
+            txtAd.Location = new Point(188, 51);
+            txtAd.Name = "txtAd";
+            txtAd.Size = new Size(472, 43);
+            txtAd.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(119, 51);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 37);
+            label1.TabIndex = 0;
+            label1.Text = "Adı:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(107, 373);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 37);
+            label4.TabIndex = 3;
+            label4.Text = "Mail:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(79, 97);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 37);
+            label2.TabIndex = 1;
+            label2.Text = "Soyadı:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(74, 327);
+            label3.Name = "label3";
+            label3.Size = new Size(108, 37);
+            label3.TabIndex = 2;
+            label3.Text = "Telefon:";
+            // 
+            // btnGuncelle
+            // 
+            btnGuncelle.Location = new Point(813, 429);
+            btnGuncelle.Name = "btnGuncelle";
+            btnGuncelle.Size = new Size(173, 56);
+            btnGuncelle.TabIndex = 36;
+            btnGuncelle.Text = "Güncelle";
+            btnGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(703, 9);
+            label7.Name = "label7";
+            label7.Size = new Size(176, 37);
+            label7.TabIndex = 35;
+            label7.Text = "Misafir Listesi";
+            // 
+            // btnSil
+            // 
+            btnSil.Location = new Point(992, 429);
+            btnSil.Name = "btnSil";
+            btnSil.Size = new Size(185, 56);
+            btnSil.TabIndex = 37;
+            btnSil.Text = "Sil";
+            btnSil.UseVisualStyleBackColor = true;
+            // 
+            // lstMisafir
+            // 
+            lstMisafir.FormattingEnabled = true;
+            lstMisafir.ItemHeight = 37;
+            lstMisafir.Location = new Point(703, 49);
+            lstMisafir.Name = "lstMisafir";
+            lstMisafir.Size = new Size(474, 374);
+            lstMisafir.TabIndex = 34;
+            // 
+            // Frm_Misafir
+            // 
+            AutoScaleDimensions = new SizeF(15F, 37F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(128, 255, 128);
+            ClientSize = new Size(1197, 503);
+            Controls.Add(grpOtel);
+            Controls.Add(btnGuncelle);
+            Controls.Add(label7);
+            Controls.Add(btnSil);
+            Controls.Add(lstMisafir);
+            Font = new Font("Segoe UI", 20F);
+            Margin = new Padding(6, 7, 6, 7);
+            Name = "Frm_Misafir";
+            Text = "Frm_Misafir";
+            grpOtel.ResumeLayout(false);
+            grpOtel.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private GroupBox grpOtel;
+        private Button btnKaydet;
+        private TextBox txtMail;
+        private TextBox txtTel;
+        private TextBox txtAdres;
+        private TextBox txtAd;
+        private Label label1;
+        private Label label4;
+        private Label label2;
+        private Label label3;
+        private Button btnGuncelle;
+        private Label label7;
+        private Button btnSil;
+        private ListBox lstMisafir;
+        private Label label8;
+        private TextBox textBox2;
+        private Label label5;
+        private DateTimePicker dateTimePicker1;
+        private TextBox textBox3;
+        private Label label6;
+    }
+}
