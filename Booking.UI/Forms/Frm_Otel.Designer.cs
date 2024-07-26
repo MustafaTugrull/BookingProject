@@ -181,6 +181,7 @@
             // nmrYildiz
             // 
             nmrYildiz.Location = new Point(145, 415);
+            nmrYildiz.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nmrYildiz.Name = "nmrYildiz";
             nmrYildiz.Size = new Size(120, 43);
             nmrYildiz.TabIndex = 9;

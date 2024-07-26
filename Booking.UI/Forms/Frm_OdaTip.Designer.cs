@@ -33,18 +33,18 @@
             label7 = new Label();
             lstOdaTip = new ListBox();
             btnKaydet = new Button();
-            txtAdres = new TextBox();
+            txtAciklama = new TextBox();
             txtAd = new TextBox();
             label2 = new Label();
             grpOtel = new GroupBox();
-            label1 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            label3 = new Label();
-            numericUpDown2 = new NumericUpDown();
+            nmrKapasite = new NumericUpDown();
             label4 = new Label();
+            nmrUcret = new NumericUpDown();
+            label3 = new Label();
+            label1 = new Label();
             grpOtel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nmrKapasite).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nmrUcret).BeginInit();
             SuspendLayout();
             // 
             // btnSil
@@ -55,6 +55,7 @@
             btnSil.TabIndex = 32;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
             // btnGuncelle
             // 
@@ -64,6 +65,7 @@
             btnGuncelle.TabIndex = 31;
             btnGuncelle.Text = "Güncelle";
             btnGuncelle.UseVisualStyleBackColor = true;
+            btnGuncelle.Click += btnGuncelle_Click;
             // 
             // label7
             // 
@@ -82,6 +84,7 @@
             lstOdaTip.Name = "lstOdaTip";
             lstOdaTip.Size = new Size(517, 337);
             lstOdaTip.TabIndex = 29;
+            lstOdaTip.SelectedIndexChanged += lstOdaTip_SelectedIndexChanged;
             // 
             // btnKaydet
             // 
@@ -91,14 +94,15 @@
             btnKaydet.TabIndex = 26;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
             // 
-            // txtAdres
+            // txtAciklama
             // 
-            txtAdres.Location = new Point(162, 100);
-            txtAdres.Multiline = true;
-            txtAdres.Name = "txtAdres";
-            txtAdres.Size = new Size(472, 110);
-            txtAdres.TabIndex = 5;
+            txtAciklama.Location = new Point(162, 100);
+            txtAciklama.Multiline = true;
+            txtAciklama.Name = "txtAciklama";
+            txtAciklama.Size = new Size(472, 110);
+            txtAciklama.TabIndex = 5;
             // 
             // txtAd
             // 
@@ -119,12 +123,12 @@
             // grpOtel
             // 
             grpOtel.BackColor = SystemColors.Control;
-            grpOtel.Controls.Add(numericUpDown2);
+            grpOtel.Controls.Add(nmrKapasite);
             grpOtel.Controls.Add(label4);
-            grpOtel.Controls.Add(numericUpDown1);
+            grpOtel.Controls.Add(nmrUcret);
             grpOtel.Controls.Add(label3);
             grpOtel.Controls.Add(btnKaydet);
-            grpOtel.Controls.Add(txtAdres);
+            grpOtel.Controls.Add(txtAciklama);
             grpOtel.Controls.Add(txtAd);
             grpOtel.Controls.Add(label1);
             grpOtel.Controls.Add(label2);
@@ -135,21 +139,30 @@
             grpOtel.TabStop = false;
             grpOtel.Text = "Oda Tip Bilgileri";
             // 
-            // label1
+            // nmrKapasite
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(28, 51);
-            label1.Name = "label1";
-            label1.Size = new Size(120, 37);
-            label1.TabIndex = 0;
-            label1.Text = "Oda Adı:";
+            nmrKapasite.Location = new Point(162, 213);
+            nmrKapasite.Maximum = new decimal(new int[] { 4, 0, 0, 0 });
+            nmrKapasite.Name = "nmrKapasite";
+            nmrKapasite.Size = new Size(120, 43);
+            nmrKapasite.TabIndex = 34;
             // 
-            // numericUpDown1
+            // label4
             // 
-            numericUpDown1.Location = new Point(514, 216);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 43);
-            numericUpDown1.TabIndex = 32;
+            label4.AutoSize = true;
+            label4.Location = new Point(17, 215);
+            label4.Name = "label4";
+            label4.Size = new Size(124, 37);
+            label4.TabIndex = 33;
+            label4.Text = "Kapasite:";
+            // 
+            // nmrUcret
+            // 
+            nmrUcret.Location = new Point(514, 216);
+            nmrUcret.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            nmrUcret.Name = "nmrUcret";
+            nmrUcret.Size = new Size(120, 43);
+            nmrUcret.TabIndex = 32;
             // 
             // label3
             // 
@@ -160,21 +173,14 @@
             label3.TabIndex = 31;
             label3.Text = "Gecelik Ücret:";
             // 
-            // numericUpDown2
+            // label1
             // 
-            numericUpDown2.Location = new Point(162, 213);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(120, 43);
-            numericUpDown2.TabIndex = 34;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(17, 215);
-            label4.Name = "label4";
-            label4.Size = new Size(124, 37);
-            label4.TabIndex = 33;
-            label4.Text = "Kapasite:";
+            label1.AutoSize = true;
+            label1.Location = new Point(28, 51);
+            label1.Name = "label1";
+            label1.Size = new Size(120, 37);
+            label1.TabIndex = 0;
+            label1.Text = "Oda Adı:";
             // 
             // Frm_OdaTip
             // 
@@ -191,10 +197,11 @@
             Margin = new Padding(6, 7, 6, 7);
             Name = "Frm_OdaTip";
             Text = "Frm_OdaTip";
+            Load += Frm_OdaTip_Load;
             grpOtel.ResumeLayout(false);
             grpOtel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmrKapasite).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmrUcret).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,13 +213,13 @@
         private Label label7;
         private ListBox lstOdaTip;
         private Button btnKaydet;
-        private TextBox txtAdres;
+        private TextBox txtAciklama;
         private TextBox txtAd;
         private Label label2;
         private GroupBox grpOtel;
-        private NumericUpDown numericUpDown2;
+        private NumericUpDown nmrKapasite;
         private Label label4;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown nmrUcret;
         private Label label3;
         private Label label1;
     }
