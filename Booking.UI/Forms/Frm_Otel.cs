@@ -34,7 +34,7 @@ namespace Booking.UI.Forms
         private void GetAllHotel()
         {
             lstOtel.ValueMember = "Id";
-            lstOtel.DisplayMember = "Name";
+            lstOtel.DisplayMember = "FullName";
             lstOtel.DataSource = _hotelService.GetAll();
         }
 
@@ -82,7 +82,7 @@ namespace Booking.UI.Forms
 
                 _hotelService.Update(secilen);
                 MessageBox.Show("Güncelleme Başarılı.");
-
+                GetAllHotel();
             }
             catch (Exception ex)
             {
@@ -119,7 +119,7 @@ namespace Booking.UI.Forms
                 nmrYildiz.Value = secilen.Stars;
                 dtpCheckIn.Value = DateTime.Today.Add(secilen.CheckinTime);
                 dtpCheckOut.Value = DateTime.Today.Add(secilen.CheckoutTime);
-                chkActive.Checked=secilen.IsActive;
+                chkActive.Checked = secilen.IsActive;
             }
         }
     }

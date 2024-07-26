@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             grpOtel = new GroupBox();
-            dateTimePicker1 = new DateTimePicker();
-            textBox3 = new TextBox();
+            dtpDateOfBirth = new DateTimePicker();
+            txtTCKN = new TextBox();
             label6 = new Label();
-            textBox2 = new TextBox();
+            txtAdres = new TextBox();
             label5 = new Label();
             label8 = new Label();
             btnKaydet = new Button();
             txtMail = new TextBox();
             txtTel = new TextBox();
-            txtAdres = new TextBox();
+            txtSoyad = new TextBox();
             txtAd = new TextBox();
             label1 = new Label();
             label4 = new Label();
@@ -54,16 +54,16 @@
             // grpOtel
             // 
             grpOtel.BackColor = SystemColors.Control;
-            grpOtel.Controls.Add(dateTimePicker1);
-            grpOtel.Controls.Add(textBox3);
+            grpOtel.Controls.Add(dtpDateOfBirth);
+            grpOtel.Controls.Add(txtTCKN);
             grpOtel.Controls.Add(label6);
-            grpOtel.Controls.Add(textBox2);
+            grpOtel.Controls.Add(txtAdres);
             grpOtel.Controls.Add(label5);
             grpOtel.Controls.Add(label8);
             grpOtel.Controls.Add(btnKaydet);
             grpOtel.Controls.Add(txtMail);
             grpOtel.Controls.Add(txtTel);
-            grpOtel.Controls.Add(txtAdres);
+            grpOtel.Controls.Add(txtSoyad);
             grpOtel.Controls.Add(txtAd);
             grpOtel.Controls.Add(label1);
             grpOtel.Controls.Add(label4);
@@ -76,19 +76,19 @@
             grpOtel.TabStop = false;
             grpOtel.Text = "Misafir Bilgileri";
             // 
-            // dateTimePicker1
+            // dtpDateOfBirth
             // 
-            dateTimePicker1.Location = new Point(188, 198);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(472, 43);
-            dateTimePicker1.TabIndex = 33;
+            dtpDateOfBirth.Location = new Point(188, 198);
+            dtpDateOfBirth.Name = "dtpDateOfBirth";
+            dtpDateOfBirth.Size = new Size(472, 43);
+            dtpDateOfBirth.TabIndex = 33;
             // 
-            // textBox3
+            // txtTCKN
             // 
-            textBox3.Location = new Point(188, 149);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(472, 43);
-            textBox3.TabIndex = 32;
+            txtTCKN.Location = new Point(188, 149);
+            txtTCKN.Name = "txtTCKN";
+            txtTCKN.Size = new Size(472, 43);
+            txtTCKN.TabIndex = 32;
             // 
             // label6
             // 
@@ -99,13 +99,13 @@
             label6.TabIndex = 31;
             label6.Text = "TC Kimlik:";
             // 
-            // textBox2
+            // txtAdres
             // 
-            textBox2.Location = new Point(188, 247);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(472, 74);
-            textBox2.TabIndex = 30;
+            txtAdres.Location = new Point(188, 247);
+            txtAdres.Multiline = true;
+            txtAdres.Name = "txtAdres";
+            txtAdres.Size = new Size(472, 74);
+            txtAdres.TabIndex = 30;
             // 
             // label5
             // 
@@ -133,6 +133,7 @@
             btnKaydet.TabIndex = 26;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
             // 
             // txtMail
             // 
@@ -148,12 +149,12 @@
             txtTel.Size = new Size(472, 43);
             txtTel.TabIndex = 6;
             // 
-            // txtAdres
+            // txtSoyad
             // 
-            txtAdres.Location = new Point(188, 100);
-            txtAdres.Name = "txtAdres";
-            txtAdres.Size = new Size(472, 43);
-            txtAdres.TabIndex = 5;
+            txtSoyad.Location = new Point(188, 100);
+            txtSoyad.Name = "txtSoyad";
+            txtSoyad.Size = new Size(472, 43);
+            txtSoyad.TabIndex = 5;
             // 
             // txtAd
             // 
@@ -206,6 +207,7 @@
             btnGuncelle.TabIndex = 36;
             btnGuncelle.Text = "Güncelle";
             btnGuncelle.UseVisualStyleBackColor = true;
+            btnGuncelle.Click += btnGuncelle_Click;
             // 
             // label7
             // 
@@ -224,6 +226,7 @@
             btnSil.TabIndex = 37;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
             // lstMisafir
             // 
@@ -233,6 +236,7 @@
             lstMisafir.Name = "lstMisafir";
             lstMisafir.Size = new Size(474, 374);
             lstMisafir.TabIndex = 34;
+            lstMisafir.SelectedIndexChanged += lstMisafir_SelectedIndexChanged;
             // 
             // Frm_Misafir
             // 
@@ -249,6 +253,7 @@
             Margin = new Padding(6, 7, 6, 7);
             Name = "Frm_Misafir";
             Text = "Frm_Misafir";
+            Load += Frm_Misafir_Load;
             grpOtel.ResumeLayout(false);
             grpOtel.PerformLayout();
             ResumeLayout(false);
@@ -261,7 +266,7 @@
         private Button btnKaydet;
         private TextBox txtMail;
         private TextBox txtTel;
-        private TextBox txtAdres;
+        private TextBox txtSoyad;
         private TextBox txtAd;
         private Label label1;
         private Label label4;
@@ -272,10 +277,10 @@
         private Button btnSil;
         private ListBox lstMisafir;
         private Label label8;
-        private TextBox textBox2;
+        private TextBox txtAdres;
         private Label label5;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox3;
+        private DateTimePicker dtpDateOfBirth;
+        private TextBox txtTCKN;
         private Label label6;
     }
 }
