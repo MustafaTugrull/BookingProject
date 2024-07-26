@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             label5 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            cmbOdaTip = new ComboBox();
+            cmbOtel = new ComboBox();
             btnKaydet = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -39,11 +39,11 @@
             label7 = new Label();
             lstOda = new ListBox();
             grpOtel = new GroupBox();
-            numericUpDown2 = new NumericUpDown();
-            label3 = new Label();
             chkActive = new CheckBox();
+            label3 = new Label();
+            nmrOdaNo = new NumericUpDown();
             grpOtel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nmrOdaNo).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -55,21 +55,23 @@
             label5.TabIndex = 29;
             label5.Text = "Oda No:";
             // 
-            // comboBox2
+            // cmbOdaTip
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(132, 97);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(472, 45);
-            comboBox2.TabIndex = 28;
+            cmbOdaTip.FormattingEnabled = true;
+            cmbOdaTip.Location = new Point(132, 97);
+            cmbOdaTip.Name = "cmbOdaTip";
+            cmbOdaTip.Size = new Size(472, 45);
+            cmbOdaTip.TabIndex = 28;
+            cmbOdaTip.SelectedIndexChanged += cmbOdaTip_SelectedIndexChanged;
             // 
-            // comboBox1
+            // cmbOtel
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(132, 46);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(472, 45);
-            comboBox1.TabIndex = 27;
+            cmbOtel.FormattingEnabled = true;
+            cmbOtel.Location = new Point(132, 46);
+            cmbOtel.Name = "cmbOtel";
+            cmbOtel.Size = new Size(472, 45);
+            cmbOtel.TabIndex = 27;
+            cmbOtel.SelectedIndexChanged += cmbOdaAd_SelectedIndexChanged;
             // 
             // btnKaydet
             // 
@@ -79,6 +81,7 @@
             btnKaydet.TabIndex = 26;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
             // 
             // label1
             // 
@@ -106,6 +109,7 @@
             btnSil.TabIndex = 37;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
             // btnGuncelle
             // 
@@ -115,6 +119,7 @@
             btnGuncelle.TabIndex = 36;
             btnGuncelle.Text = "Güncelle";
             btnGuncelle.UseVisualStyleBackColor = true;
+            btnGuncelle.Click += btnGuncelle_Click;
             // 
             // label7
             // 
@@ -133,16 +138,17 @@
             lstOda.Name = "lstOda";
             lstOda.Size = new Size(538, 374);
             lstOda.TabIndex = 34;
+            lstOda.SelectedIndexChanged += lstOda_SelectedIndexChanged;
             // 
             // grpOtel
             // 
             grpOtel.BackColor = SystemColors.Control;
             grpOtel.Controls.Add(chkActive);
             grpOtel.Controls.Add(label3);
-            grpOtel.Controls.Add(numericUpDown2);
+            grpOtel.Controls.Add(nmrOdaNo);
             grpOtel.Controls.Add(label5);
-            grpOtel.Controls.Add(comboBox2);
-            grpOtel.Controls.Add(comboBox1);
+            grpOtel.Controls.Add(cmbOdaTip);
+            grpOtel.Controls.Add(cmbOtel);
             grpOtel.Controls.Add(btnKaydet);
             grpOtel.Controls.Add(label1);
             grpOtel.Controls.Add(label2);
@@ -153,12 +159,15 @@
             grpOtel.TabStop = false;
             grpOtel.Text = "Oda Bilgileri";
             // 
-            // numericUpDown2
+            // chkActive
             // 
-            numericUpDown2.Location = new Point(132, 147);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(120, 43);
-            numericUpDown2.TabIndex = 35;
+            chkActive.AutoSize = true;
+            chkActive.Location = new Point(132, 197);
+            chkActive.Name = "chkActive";
+            chkActive.Size = new Size(90, 41);
+            chkActive.TabIndex = 38;
+            chkActive.Text = "Aktif";
+            chkActive.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -169,15 +178,14 @@
             label3.TabIndex = 37;
             label3.Text = "Durum:";
             // 
-            // chkActive
+            // nmrOdaNo
             // 
-            chkActive.AutoSize = true;
-            chkActive.Location = new Point(132, 197);
-            chkActive.Name = "chkActive";
-            chkActive.Size = new Size(90, 41);
-            chkActive.TabIndex = 38;
-            chkActive.Text = "Aktif";
-            chkActive.UseVisualStyleBackColor = true;
+            nmrOdaNo.Location = new Point(132, 147);
+            nmrOdaNo.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nmrOdaNo.Name = "nmrOdaNo";
+            nmrOdaNo.Size = new Size(120, 43);
+            nmrOdaNo.TabIndex = 35;
+            nmrOdaNo.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // Frm_Oda
             // 
@@ -194,17 +202,18 @@
             Margin = new Padding(6, 7, 6, 7);
             Name = "Frm_Oda";
             Text = "Frm_Oda";
+            Load += Frm_Oda_Load;
             grpOtel.ResumeLayout(false);
             grpOtel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmrOdaNo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private Label label5;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cmbOdaTip;
+        private ComboBox cmbOtel;
         private Button btnKaydet;
         private Label label1;
         private Label label2;
@@ -213,7 +222,7 @@
         private Label label7;
         private ListBox lstOda;
         private GroupBox grpOtel;
-        private NumericUpDown numericUpDown2;
+        private NumericUpDown nmrOdaNo;
         private Label label3;
         private CheckBox chkActive;
     }
