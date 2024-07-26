@@ -33,7 +33,13 @@
             label3 = new Label();
             label4 = new Label();
             grpOtel = new GroupBox();
+            chkActive = new CheckBox();
+            label9 = new Label();
+            dtpCheckOut = new DateTimePicker();
             btnKaydet = new Button();
+            label8 = new Label();
+            dtpCheckIn = new DateTimePicker();
+            label6 = new Label();
             nmrYildiz = new NumericUpDown();
             label5 = new Label();
             txtMail = new TextBox();
@@ -44,10 +50,6 @@
             label7 = new Label();
             btnGuncelle = new Button();
             btnSil = new Button();
-            label6 = new Label();
-            dtpCheckIn = new DateTimePicker();
-            dtpCheckOut = new DateTimePicker();
-            label8 = new Label();
             grpOtel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nmrYildiz).BeginInit();
             SuspendLayout();
@@ -91,6 +93,8 @@
             // grpOtel
             // 
             grpOtel.BackColor = SystemColors.Control;
+            grpOtel.Controls.Add(chkActive);
+            grpOtel.Controls.Add(label9);
             grpOtel.Controls.Add(dtpCheckOut);
             grpOtel.Controls.Add(btnKaydet);
             grpOtel.Controls.Add(label8);
@@ -113,14 +117,66 @@
             grpOtel.TabStop = false;
             grpOtel.Text = "Otel Bilgileri";
             // 
+            // chkActive
+            // 
+            chkActive.AutoSize = true;
+            chkActive.Location = new Point(375, 417);
+            chkActive.Name = "chkActive";
+            chkActive.Size = new Size(90, 41);
+            chkActive.TabIndex = 32;
+            chkActive.Text = "Aktif";
+            chkActive.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(271, 417);
+            label9.Name = "label9";
+            label9.Size = new Size(111, 37);
+            label9.TabIndex = 31;
+            label9.Text = "Durum :";
+            // 
+            // dtpCheckOut
+            // 
+            dtpCheckOut.Location = new Point(145, 360);
+            dtpCheckOut.Name = "dtpCheckOut";
+            dtpCheckOut.Size = new Size(472, 43);
+            dtpCheckOut.TabIndex = 30;
+            // 
             // btnKaydet
             // 
-            btnKaydet.Location = new Point(459, 415);
+            btnKaydet.Location = new Point(471, 407);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(158, 56);
             btnKaydet.TabIndex = 26;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(-6, 360);
+            label8.Name = "label8";
+            label8.Size = new Size(145, 37);
+            label8.TabIndex = 29;
+            label8.Text = "CheckOut :";
+            // 
+            // dtpCheckIn
+            // 
+            dtpCheckIn.Location = new Point(145, 311);
+            dtpCheckIn.Name = "dtpCheckIn";
+            dtpCheckIn.Size = new Size(472, 43);
+            dtpCheckIn.TabIndex = 28;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(16, 311);
+            label6.Name = "label6";
+            label6.Size = new Size(123, 37);
+            label6.TabIndex = 27;
+            label6.Text = "CheckIn :";
             // 
             // nmrYildiz
             // 
@@ -175,6 +231,7 @@
             lstOtel.Name = "lstOtel";
             lstOtel.Size = new Size(517, 374);
             lstOtel.TabIndex = 5;
+            lstOtel.SelectedIndexChanged += lstOtel_SelectedIndexChanged;
             // 
             // label7
             // 
@@ -193,6 +250,7 @@
             btnGuncelle.TabIndex = 26;
             btnGuncelle.Text = "Güncelle";
             btnGuncelle.UseVisualStyleBackColor = true;
+            btnGuncelle.Click += btnGuncelle_Click;
             // 
             // btnSil
             // 
@@ -202,38 +260,7 @@
             btnSil.TabIndex = 27;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(16, 311);
-            label6.Name = "label6";
-            label6.Size = new Size(123, 37);
-            label6.TabIndex = 27;
-            label6.Text = "CheckIn :";
-            // 
-            // dtpCheckIn
-            // 
-            dtpCheckIn.Location = new Point(145, 311);
-            dtpCheckIn.Name = "dtpCheckIn";
-            dtpCheckIn.Size = new Size(472, 43);
-            dtpCheckIn.TabIndex = 28;
-            // 
-            // dtpCheckOut
-            // 
-            dtpCheckOut.Location = new Point(145, 360);
-            dtpCheckOut.Name = "dtpCheckOut";
-            dtpCheckOut.Size = new Size(472, 43);
-            dtpCheckOut.TabIndex = 30;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(-6, 360);
-            label8.Name = "label8";
-            label8.Size = new Size(145, 37);
-            label8.TabIndex = 29;
-            label8.Text = "CheckOut :";
+            btnSil.Click += btnSil_Click;
             // 
             // Frm_Otel
             // 
@@ -250,6 +277,7 @@
             Margin = new Padding(6, 7, 6, 7);
             Name = "Frm_Otel";
             Text = "Frm_Otel";
+            Load += Frm_Otel_Load;
             grpOtel.ResumeLayout(false);
             grpOtel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nmrYildiz).EndInit();
@@ -279,5 +307,7 @@
         private Label label8;
         private DateTimePicker dtpCheckIn;
         private Label label6;
+        private CheckBox chkActive;
+        private Label label9;
     }
 }
