@@ -12,7 +12,7 @@ namespace Booking.Business.Validator
     {
         public BookingsValidator()
         {
-            RuleFor(b => b.Guest)
+            RuleFor(b => b.Id)
                 .NotEmpty()
                 .WithMessage("Misafir alanı boş olamaz.");
         }

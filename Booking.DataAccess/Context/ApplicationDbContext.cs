@@ -65,8 +65,6 @@ namespace Booking.DataAccess.Context
             Phone = "555-123-4567",
             Email = "contact@grandhotel.com",
             Stars = 5,
-            CheckinTime = new TimeSpan(15, 0, 0),
-            CheckoutTime = new TimeSpan(11, 0, 0),
             IsActive = true,
             CreatedDate = DateTime.UtcNow
         });

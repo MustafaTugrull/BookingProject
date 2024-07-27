@@ -50,8 +50,6 @@ namespace Booking.UI.Forms
                     Phone = txtTel.Text,
                     Email = txtMail.Text,
                     Stars = (int)nmrYildiz.Value,
-                    CheckinTime = dtpCheckIn.Value.TimeOfDay,
-                    CheckoutTime = dtpCheckOut.Value.TimeOfDay,
                     IsActive = chkActive.Checked,
                     CreatedDate = DateTime.Now
 
@@ -76,8 +74,6 @@ namespace Booking.UI.Forms
                 secilen.Phone = txtTel.Text;
                 secilen.Email = txtMail.Text;
                 secilen.Stars = (int)nmrYildiz.Value;
-                secilen.CheckinTime = dtpCheckIn.Value.TimeOfDay;
-                secilen.CheckoutTime = dtpCheckOut.Value.TimeOfDay;
                 secilen.IsActive = chkActive.Checked;
 
                 _hotelService.Update(secilen);
@@ -117,8 +113,6 @@ namespace Booking.UI.Forms
                 txtTel.Text = secilen.Phone;
                 txtMail.Text = secilen.Email;
                 nmrYildiz.Value = secilen.Stars;
-                dtpCheckIn.Value = DateTime.Today.Add(secilen.CheckinTime);
-                dtpCheckOut.Value = DateTime.Today.Add(secilen.CheckoutTime);
                 chkActive.Checked = secilen.IsActive;
             }
         }
