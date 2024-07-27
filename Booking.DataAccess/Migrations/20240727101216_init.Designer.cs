@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240721085219_init")]
+    [Migration("20240727101216_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -27,22 +27,25 @@ namespace Booking.DataAccess.Migrations
 
             modelBuilder.Entity("Booking.Entities.Models.BookingGuest", b =>
                 {
-                    b.Property<Guid>("BookingID")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("GuestID")
+                    b.Property<Guid>("BookingID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("GuestID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.HasKey("BookingID", "GuestID");
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingID");
 
                     b.HasIndex("GuestID");
 
@@ -73,6 +76,9 @@ namespace Booking.DataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
+                    b.Property<Guid>("RoomId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("RoomNumber")
                         .HasColumnType("int");
 
@@ -83,7 +89,7 @@ namespace Booking.DataAccess.Migrations
 
                     b.HasIndex("GuestID");
 
-                    b.HasIndex("RoomNumber", "HotelID");
+                    b.HasIndex("RoomId");
 
                     b.ToTable("Bookings");
                 });
@@ -208,33 +214,36 @@ namespace Booking.DataAccess.Migrations
 
             modelBuilder.Entity("Booking.Entities.Models.Room", b =>
                 {
-                    b.Property<int>("RoomNumber")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("HotelID")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("HotelID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("RoomNumber")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("RoomTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<Guid>("TypeID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("RoomNumber", "HotelID");
+                    b.HasKey("Id");
 
                     b.HasIndex("HotelID");
 
-                    b.HasIndex("TypeID");
+                    b.HasIndex("RoomTypeId");
 
                     b.ToTable("Rooms");
                 });
@@ -326,13 +335,13 @@ namespace Booking.DataAccess.Migrations
                     b.HasOne("Booking.Entities.Models.Bookings", "Booking")
                         .WithMany("BookingGuests")
                         .HasForeignKey("BookingID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Booking.Entities.Models.Guest", "Guest")
                         .WithMany("BookingGuests")
                         .HasForeignKey("GuestID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Booking");
@@ -350,7 +359,7 @@ namespace Booking.DataAccess.Migrations
 
                     b.HasOne("Booking.Entities.Models.Room", "Room")
                         .WithMany("Bookings")
-                        .HasForeignKey("RoomNumber", "HotelID")
+                        .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -380,7 +389,7 @@ namespace Booking.DataAccess.Migrations
 
                     b.HasOne("Booking.Entities.Models.RoomType", "RoomType")
                         .WithMany("Rooms")
-                        .HasForeignKey("TypeID")
+                        .HasForeignKey("RoomTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

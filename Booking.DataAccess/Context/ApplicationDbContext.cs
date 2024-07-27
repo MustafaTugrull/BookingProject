@@ -28,48 +28,48 @@ namespace Booking.DataAccess.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Room>()
-                .HasKey(r => new { r.RoomNumber, r.HotelID });
+            //modelBuilder.Entity<Room>()
+            //    .HasKey(r => new { r.RoomNumber, r.HotelID });
 
-            modelBuilder.Entity<Staff>()
-                .HasOne(s => s.Hotel)
-                .WithMany(h => h.Staffs)
-                .HasForeignKey(s => s.HotelID);
+            //modelBuilder.Entity<Staff>()
+            //    .HasOne(s => s.Hotel)
+            //    .WithMany(h => h.Staffs)
+            //    .HasForeignKey(s => s.HotelID);
 
-            modelBuilder.Entity<Room>()
-                .HasOne(r => r.Hotel)
-                .WithMany(h => h.Rooms)
-                .HasForeignKey(r => r.HotelID);
+            //modelBuilder.Entity<Room>()
+            //    .HasOne(r => r.Hotel)
+            //    .WithMany(h => h.Rooms)
+            //    .HasForeignKey(r => r.HotelID);
 
-            modelBuilder.Entity<Room>()
-                .HasOne(r => r.RoomType)
-                .WithMany(rt => rt.Rooms)
-                .HasForeignKey(r => r.TypeID);
+            //modelBuilder.Entity<Room>()
+            //    .HasOne(r => r.RoomType)
+            //    .WithMany(rt => rt.Rooms)
+            //    .HasForeignKey(r => r.TypeID);
 
-            modelBuilder.Entity<Bookings>()
-                .HasOne(b => b.Room)
-                .WithMany(r => r.Bookings)
-                .HasForeignKey(b => new { b.RoomNumber, b.HotelID });
+            //modelBuilder.Entity<Bookings>()
+            //    .HasOne(b => b.Room)
+            //    .WithMany(r => r.Bookings)
+            //    .HasForeignKey(b => new { b.RoomNumber, b.HotelID });
 
-            modelBuilder.Entity<Payment>()
-                .HasOne(p => p.Booking)
-                .WithMany(b => b.Payments)
-                .HasForeignKey(p => p.BookingID);
+            //modelBuilder.Entity<Payment>()
+            //    .HasOne(p => p.Booking)
+            //    .WithMany(b => b.Payments)
+            //    .HasForeignKey(p => p.BookingID);
 
-            modelBuilder.Entity<BookingGuest>()
-                .HasKey(bg => new { bg.BookingID, bg.GuestID });
+            //modelBuilder.Entity<BookingGuest>()
+            //    .HasKey(bg => new { bg.BookingID, bg.GuestID });
 
-            modelBuilder.Entity<BookingGuest>()
-                .HasOne(bg => bg.Booking)
-                .WithMany(b => b.BookingGuests)
-                .HasForeignKey(bg => bg.BookingID)
-                .OnDelete(DeleteBehavior.NoAction);  
+            //modelBuilder.Entity<BookingGuest>()
+            //    .HasOne(bg => bg.Booking)
+            //    .WithMany(b => b.BookingGuests)
+            //    .HasForeignKey(bg => bg.BookingID)
+            //    .OnDelete(DeleteBehavior.NoAction);  
 
-            modelBuilder.Entity<BookingGuest>()
-                .HasOne(bg => bg.Guest)
-                .WithMany(g => g.BookingGuests)
-                .HasForeignKey(bg => bg.GuestID)
-                .OnDelete(DeleteBehavior.NoAction);
+            //modelBuilder.Entity<BookingGuest>()
+            //    .HasOne(bg => bg.Guest)
+            //    .WithMany(g => g.BookingGuests)
+            //    .HasForeignKey(bg => bg.GuestID)
+            //    .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
