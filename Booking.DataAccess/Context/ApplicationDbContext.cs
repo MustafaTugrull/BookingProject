@@ -28,6 +28,71 @@ namespace Booking.DataAccess.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Guest>().HasData(
+        new Guest
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "John",
+            LastName = "Doe",
+            DateOfBirth = new DateTime(1980, 1, 1),
+            Address = "123 Main St",
+            Phone = "123-456-7890",
+            Email = "john.doe@example.com",
+            TCKN = "12345678901",
+            IsActive = true,
+            CreatedDate = DateTime.UtcNow
+        },
+        new Guest
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "Jane",
+            LastName = "Doe",
+            DateOfBirth = new DateTime(1985, 5, 15),
+            Address = "456 Elm St",
+            Phone = "987-654-3210",
+            Email = "jane.doe@example.com",
+            TCKN = "10987654321",
+            IsActive = true,
+            CreatedDate = DateTime.UtcNow
+        });
+
+            modelBuilder.Entity<Hotel>().HasData(
+        new Hotel
+        {
+            Id = Guid.NewGuid(),
+            Name = "Grand Hotel",
+            Address = "789 Oak St",
+            Phone = "555-123-4567",
+            Email = "contact@grandhotel.com",
+            Stars = 5,
+            CheckinTime = new TimeSpan(15, 0, 0),
+            CheckoutTime = new TimeSpan(11, 0, 0),
+            IsActive = true,
+            CreatedDate = DateTime.UtcNow
+        });
+
+            modelBuilder.Entity<RoomType>().HasData(
+        new RoomType
+        {
+            Id = Guid.NewGuid(),
+            Name = "Deluxe Suite",
+            Description = "A luxurious suite with a king-sized bed and ocean view.",
+            PricePerNight = 250.00m,
+            Capacity = 2,
+            IsActive = true,
+            CreatedDate = DateTime.UtcNow
+        },
+        new RoomType
+        {
+            Id = Guid.NewGuid(),
+            Name = "Standard Room",
+            Description = "A comfortable room with all standard amenities.",
+            PricePerNight = 100.00m,
+            Capacity = 2,
+            IsActive = true,
+            CreatedDate = DateTime.UtcNow
+        });
+
             //modelBuilder.Entity<Room>()
             //    .HasKey(r => new { r.RoomNumber, r.HotelID });
 
