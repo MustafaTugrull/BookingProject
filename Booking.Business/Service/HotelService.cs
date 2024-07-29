@@ -39,7 +39,7 @@ namespace Booking.Business.Service
         public Hotel GetByID(Guid id)
         {
             var hotel =_hotelRepository.GetByID(id);
-            if (hotel != null)
+            if (hotel == null)
             {
                 throw new Exception("Otel bulunamadı.");
             }

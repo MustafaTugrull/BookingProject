@@ -38,7 +38,7 @@ namespace Booking.Business.Service
         public RoomType GetByID(Guid id)
         {
             var room = _roomTypeRepository.GetByID(id);
-            if (room != null)
+            if (room == null)
             {
                 throw new Exception("Oda bulunamadı.");
             }

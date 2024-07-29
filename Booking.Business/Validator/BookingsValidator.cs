@@ -12,9 +12,16 @@ namespace Booking.Business.Validator
     {
         public BookingsValidator()
         {
-            RuleFor(b => b.Id)
-                .NotEmpty()
-                .WithMessage("Misafir alanı boş olamaz.");
+            //RuleFor(booking => booking.CheckinDate)
+            //    .LessThan(booking => booking.CheckoutDate)
+            //    .WithMessage("Check-in tarihi, check-out tarihinden önce olmalıdır.");
+
+            //RuleFor(booking => booking.RoomID)
+            //    .NotEmpty().WithMessage("Oda ID'si boş olamaz.");
+
+            //RuleFor(booking => booking.TotalPrice)
+            //    .GreaterThan(0).WithMessage("Toplam fiyat 0'dan büyük olmalıdır.");
+
         }
 
     }

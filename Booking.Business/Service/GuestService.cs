@@ -48,7 +48,7 @@ namespace Booking.Business.Service
         public Guest GetByID(Guid id)
         {
             var guest = _guestRepository.GetByID(id);
-            if (guest != null)
+            if (guest == null)
             {
                 throw new Exception("Misaifir Bulunamadı.");
             }

@@ -52,7 +52,7 @@ namespace Booking.UI.Forms
         private void GetAllHotel()
         {
             cmbOtel.ValueMember = "Id";
-            cmbOtel.DisplayMember = "FullName";
+            cmbOtel.DisplayMember = "Name";
             cmbOtel.DataSource = _hotelService.GetAll();
         }
 

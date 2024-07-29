@@ -44,7 +44,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { tANIMLAMALARToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1251, 45);
+            menuStrip1.Size = new Size(1798, 45);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -95,7 +95,7 @@
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 255, 128);
-            ClientSize = new Size(1251, 701);
+            ClientSize = new Size(1798, 732);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe UI", 20F);
             IsMdiContainer = true;

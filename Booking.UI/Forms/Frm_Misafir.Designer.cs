@@ -44,10 +44,6 @@
             label4 = new Label();
             label2 = new Label();
             label3 = new Label();
-            btnGuncelle = new Button();
-            label7 = new Label();
-            btnSil = new Button();
-            lstMisafir = new ListBox();
             grpOtel.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,7 +67,7 @@
             grpOtel.Controls.Add(label3);
             grpOtel.Location = new Point(17, 13);
             grpOtel.Name = "grpOtel";
-            grpOtel.Size = new Size(680, 484);
+            grpOtel.Size = new Size(720, 484);
             grpOtel.TabIndex = 33;
             grpOtel.TabStop = false;
             grpOtel.Text = "Misafir Bilgileri";
@@ -199,56 +195,13 @@
             label3.TabIndex = 2;
             label3.Text = "Telefon:";
             // 
-            // btnGuncelle
-            // 
-            btnGuncelle.Location = new Point(813, 429);
-            btnGuncelle.Name = "btnGuncelle";
-            btnGuncelle.Size = new Size(173, 56);
-            btnGuncelle.TabIndex = 36;
-            btnGuncelle.Text = "Güncelle";
-            btnGuncelle.UseVisualStyleBackColor = true;
-            btnGuncelle.Click += btnGuncelle_Click;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(703, 9);
-            label7.Name = "label7";
-            label7.Size = new Size(176, 37);
-            label7.TabIndex = 35;
-            label7.Text = "Misafir Listesi";
-            // 
-            // btnSil
-            // 
-            btnSil.Location = new Point(992, 429);
-            btnSil.Name = "btnSil";
-            btnSil.Size = new Size(185, 56);
-            btnSil.TabIndex = 37;
-            btnSil.Text = "Sil";
-            btnSil.UseVisualStyleBackColor = true;
-            btnSil.Click += btnSil_Click;
-            // 
-            // lstMisafir
-            // 
-            lstMisafir.FormattingEnabled = true;
-            lstMisafir.ItemHeight = 37;
-            lstMisafir.Location = new Point(703, 49);
-            lstMisafir.Name = "lstMisafir";
-            lstMisafir.Size = new Size(474, 374);
-            lstMisafir.TabIndex = 34;
-            lstMisafir.SelectedIndexChanged += lstMisafir_SelectedIndexChanged;
-            // 
             // Frm_Misafir
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 255, 128);
-            ClientSize = new Size(1197, 503);
+            ClientSize = new Size(873, 503);
             Controls.Add(grpOtel);
-            Controls.Add(btnGuncelle);
-            Controls.Add(label7);
-            Controls.Add(btnSil);
-            Controls.Add(lstMisafir);
             Font = new Font("Segoe UI", 20F);
             Margin = new Padding(6, 7, 6, 7);
             Name = "Frm_Misafir";
@@ -257,7 +210,6 @@
             grpOtel.ResumeLayout(false);
             grpOtel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -272,10 +224,6 @@
         private Label label4;
         private Label label2;
         private Label label3;
-        private Button btnGuncelle;
-        private Label label7;
-        private Button btnSil;
-        private ListBox lstMisafir;
         private Label label8;
         private TextBox txtAdres;
         private Label label5;

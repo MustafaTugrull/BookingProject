@@ -45,8 +45,8 @@ namespace Booking.UI.Forms
 
         private void mISAFIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Misafir fMis = new Frm_Misafir();
-            FormControl(fMis);
+            //Frm_Misafir fMis = new Frm_Misafir();
+            //FormControl(fMis);
         }
 
         private void rEZERVASYONtoolStripMenuItem1_Click(object sender, EventArgs e)

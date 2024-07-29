@@ -9,5 +9,10 @@ namespace Booking.Entities.Models
         public decimal PricePerNight { get; set; }
         public int Capacity { get; set; }
         public ICollection<Room> Rooms { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
     }
 }
